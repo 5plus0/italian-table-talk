@@ -3,7 +3,7 @@
 ## 当前状态
 
 - 项目名称：Italian Table Talk / 意大利餐厅点餐英语
-- 当前版本：首次公开发布版
+- 当前版本：公开发布版 v3（TheFork 合并优化版）
 - 线上地址：https://italian-table-talk.nutmeg-bell-0102.chatgpt.site
 - 访问范围：公开，手机浏览器和微信内置浏览器均可打开
 - 发布日期：2026-09-24
@@ -12,6 +12,9 @@
 
 - 16 个意大利餐厅常见场景，中英文对照展示。
 - 对话内容包含入座、TheFork 折扣确认、推荐、点餐、份量、口味、佛罗伦萨牛排、甜度、特殊要求、确认订单、催单、漏单、结账和打包等情况。
+- TheFork 场景已按入座确认、点餐确认限制、正常结账和折扣遗漏四个阶段合并优化，并覆盖餐位费、单点菜单及刷卡表达。
+- 佛罗伦萨牛排场景覆盖重量、分享人数和从 blue / extra rare 到 well-done 的完整熟度词汇。
+- 口味场景包含清淡调味、少放调味料和意面煮软等表达。
 - 每句英文均带播放/暂停按钮。
 - 每轮对话下方提供句式结构，便于替换关键词练习。
 - 每个场景列出相关菜品和餐厅词汇，中英文对照并支持播放。
@@ -31,7 +34,7 @@
 - `app/globals.css`：项目全局样式。
 - `.openai/hosting.json`：当前 Sites 托管项目标识。
 - `package.json`、`pnpm-lock.yaml`：项目依赖及锁定版本。
-- `docs/ordering-english-standalone.html`：无需构建即可打开的独立 HTML 版本。
+- `docs/ordering-english-standalone.html`：无需构建即可打开的早期独立 HTML 版本；最新内容以 `app/page.tsx` 和线上页面为准。
 - `docs/dish-chat-source.rtf`：用户整理的原始对话文档。
 
 ## 本地运行与构建
