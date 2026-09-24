@@ -101,8 +101,34 @@ const scenes: Scene[] = [
     ],
   },
   {
-    id: 'recommendations',
+    id: 'thefork-discount',
     number: '02',
+    title: '确认 TheFork 预订折扣',
+    subtitle: '到店报预订时先确认，结账前再核对',
+    lines: [
+      { speaker: 'You', english: 'Hi, I have a reservation through TheFork under Wu.', chinese: '你好，我通过 TheFork 预订了座位，预订人姓吴。' },
+      { speaker: 'You', english: 'My booking includes a 30% discount. Could you confirm that it applies?', chinese: '我的预订包含七折优惠。能帮我确认适用吗？' },
+      { speaker: 'Host', english: 'Yes, I can see the promotion on your reservation.', chinese: '可以，我能在您的预订中看到这个优惠。' },
+      { speaker: 'You', english: 'Does the discount apply to all food, or are any items excluded?', chinese: '折扣适用于所有餐食吗？有没有不参与优惠的菜品？' },
+      { speaker: 'Host', english: 'It applies to food from the à la carte menu. Drinks and set menus are not included.', chinese: '优惠适用于单点菜单中的餐食，饮品和套餐不参与。' },
+      { speaker: 'You', english: 'Great. Could you please make a note of it for our table?', chinese: '好的，可以帮我们这桌备注一下吗？' },
+      { speaker: 'You', english: 'Excuse me, could you check that the TheFork discount has been applied to the bill?', chinese: '不好意思，能帮我确认账单已经使用 TheFork 折扣了吗？' },
+      { speaker: 'Waiter', english: "Let me check. You're right—the discount is missing. I'll correct the bill.", chinese: '我确认一下。您说得对，折扣漏了。我马上更正账单。' },
+    ],
+    dishes: [
+      { en: 'reservation', zh: '预订' },
+      { en: 'promotion', zh: '优惠活动' },
+      { en: 'discount', zh: '折扣' },
+      { en: 'à la carte menu', zh: '单点菜单' },
+      { en: 'set menu', zh: '套餐' },
+      { en: 'excluded', zh: '不包含在内的' },
+      { en: 'apply the discount', zh: '应用折扣' },
+      { en: 'correct the bill', zh: '更正账单' },
+    ],
+  },
+  {
+    id: 'recommendations',
+    number: '03',
     title: '看菜单与询问推荐',
     subtitle: '问招牌菜、热门菜和今日特供',
     lines: [
@@ -119,7 +145,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'ordering',
-    number: '03',
+    number: '04',
     title: '点餐',
     subtitle: '主菜、配菜、饮品、甜品合并点单',
     lines: [
@@ -139,7 +165,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'portion-size',
-    number: '04',
+    number: '05',
     title: '询问份量与尺寸',
     subtitle: '点餐时顺带确认大小、人数和小份',
     lines: [
@@ -159,13 +185,15 @@ const scenes: Scene[] = [
   },
   {
     id: 'taste-texture',
-    number: '05',
+    number: '06',
     title: '口味与口感要求',
     subtitle: '辣咸、油、意面软硬和牛排熟度',
     lines: [
       { speaker: 'You', english: 'Is this dish spicy?', chinese: '这道菜辣吗？' },
       { speaker: 'You', english: 'Is it very salty?', chinese: '会很咸吗？' },
       { speaker: 'You', english: 'Is it oily? Can you make it less oily?', chinese: '会很油吗？可以少油吗？' },
+      { speaker: 'You', english: 'Lighter seasoning, please.', chinese: '请调味清淡一点。' },
+      { speaker: 'You', english: 'If possible, could you ask the kitchen to go easy on the seasoning?', chinese: '如果可以，能请厨房少放一些调味料吗？' },
       { speaker: 'You', english: 'For the pasta, can you make it a bit softer?', chinese: '意面能煮得软一点？' },
       { speaker: 'You', english: "I'd like it medium-rare, please.", chinese: '我要三分熟。' },
     ],
@@ -173,13 +201,46 @@ const scenes: Scene[] = [
       { en: 'spicy', zh: '辣的' },
       { en: 'salty', zh: '咸的' },
       { en: 'oily', zh: '油腻的' },
+      { en: 'lighter seasoning', zh: '清淡调味' },
+      { en: 'go easy on the seasoning', zh: '少放调味料' },
       { en: 'softer', zh: '更软的' },
       { en: 'medium-rare', zh: '三分熟' },
     ],
   },
   {
+    id: 'florentine-steak',
+    number: '07',
+    title: '在佛罗伦萨点牛排',
+    subtitle: '确认重量、够几人分享以及牛排熟度',
+    lines: [
+      { speaker: 'You', english: "We'd like to try the bistecca alla fiorentina. Is it sold by weight?", chinese: '我们想尝尝佛罗伦萨牛排。它是按重量出售的吗？' },
+      { speaker: 'Waiter', english: 'Yes, it is priced by the kilogram.', chinese: '是的，按公斤计价。' },
+      { speaker: 'You', english: 'What is the minimum weight?', chinese: '最低重量是多少？' },
+      { speaker: 'Waiter', english: 'The smallest one available today is about 1.2 kilograms.', chinese: '今天最小的一块大约是1.2公斤。' },
+      { speaker: 'You', english: 'How many people is that enough for?', chinese: '这个份量够几个人吃？' },
+      { speaker: 'Waiter', english: 'It is enough for two to three people to share.', chinese: '够两到三个人分享。' },
+      { speaker: 'You', english: 'How do you normally cook it?', chinese: '你们通常会做成几分熟？' },
+      { speaker: 'Waiter', english: 'Traditionally, it is served rare.', chinese: '传统上会做成偏生的熟度。' },
+      { speaker: 'You', english: "Could we have it medium-rare instead? We don't want it too raw in the center.", chinese: '可以改成三到五分熟吗？我们不希望中间太生。' },
+      { speaker: 'Waiter', english: "Certainly. I'll ask the kitchen, but the chef may recommend keeping the center pink.", chinese: '可以，我会跟厨房说明，不过主厨可能仍建议保留粉红色的中心。' },
+      { speaker: 'You', english: 'Could you show us the steak and tell us the exact weight before cooking it?', chinese: '烹饪前可以给我们看一下牛排，并告诉我们准确重量吗？' },
+    ],
+    dishes: [
+      { en: 'bistecca alla fiorentina', zh: '佛罗伦萨牛排' },
+      { en: 'sold by weight', zh: '按重量出售' },
+      { en: 'minimum weight', zh: '最低重量' },
+      { en: 'per kilogram', zh: '每公斤' },
+      { en: 'blue / extra rare', zh: '近生（表面煎封、中心几乎生）' },
+      { en: 'rare', zh: '一分熟（中心红色）' },
+      { en: 'medium-rare', zh: '三分熟（中心红粉色）' },
+      { en: 'medium', zh: '五分熟（中心粉色）' },
+      { en: 'medium-well', zh: '七分熟（中心略带粉色）' },
+      { en: 'well-done', zh: '全熟' },
+    ],
+  },
+  {
     id: 'sweetness',
-    number: '06',
+    number: '08',
     title: '甜度要求',
     subtitle: '少糖、不额外加糖和确认酸甜',
     lines: [
@@ -200,7 +261,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'special-requests',
-    number: '07',
+    number: '09',
     title: '特殊要求',
     subtitle: '忌口、替换、酱汁另放',
     lines: [
@@ -220,7 +281,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'order-confirmation',
-    number: '08',
+    number: '10',
     title: '确认订单',
     subtitle: '服务员复述，自己核对或纠正',
     lines: [
@@ -238,7 +299,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'waiting',
-    number: '09',
+    number: '11',
     title: '等待中催单',
     subtitle: '上菜慢、只差一道菜时怎么问',
     lines: [
@@ -254,7 +315,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'utensils-condiments',
-    number: '10',
+    number: '12',
     title: '索要调料、餐具、空盘',
     subtitle: '缺餐具、加调料、分享用盘',
     lines: [
@@ -274,7 +335,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'counter-ordering',
-    number: '11',
+    number: '13',
     title: '前台点餐',
     subtitle: '柜台下单、说明桌位、索要小票或号码',
     lines: [
@@ -291,7 +352,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'missing-wrong-order',
-    number: '12',
+    number: '14',
     title: '漏单或上错菜',
     subtitle: '处理漏单、取消订单、确认不会收费',
     lines: [
@@ -318,7 +379,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'checkout-payment',
-    number: '13',
+    number: '15',
     title: '结账与支付',
     subtitle: '呼唤服务员、确认支付方式',
     lines: [
@@ -341,7 +402,7 @@ const scenes: Scene[] = [
   },
   {
     id: 'takeaway',
-    number: '14',
+    number: '16',
     title: '打包带走',
     subtitle: '索要打包盒，把剩菜带走',
     lines: [
@@ -389,6 +450,7 @@ const dishCategories: Category[] = [
       { en: 'seafood risotto', zh: '海鲜烩饭' },
       { en: 'mushroom risotto', zh: '蘑菇烩饭' },
       { en: 'steak', zh: '牛排' },
+      { en: 'bistecca alla fiorentina', zh: '佛罗伦萨牛排' },
       { en: 'grilled fish', zh: '烤鱼' },
       { en: 'chicken Milanese', zh: '米兰式鸡排' },
     ],
@@ -447,6 +509,12 @@ function getPattern(text: string) {
     [/A table for four/i, 'A table for + [number], please. = 要一张 [人数] 桌。'],
     [/Do you have a reservation/i, 'Do you have + [noun]? = 你有 [某物/预订] 吗？'],
     [/under Wu/i, 'Yes, under + [name]. = 有的，登记在 [姓名] 名下。'],
+    [/reservation through TheFork/i, 'I have a reservation through + [platform] under + [name]. = 我通过 [平台] 预订，预订人是 [姓名]。'],
+    [/booking includes/i, 'My booking includes + [discount/benefit]. = 我的预订包含 [折扣/权益]。'],
+    [/confirm that it applies/i, 'Could you confirm that + [offer] applies? = 能确认 [优惠] 适用吗？'],
+    [/any items excluded/i, 'Does it apply to + [items], or are any items excluded? = 它适用于 [项目] 吗？有没有不包含的？'],
+    [/make a note of it/i, 'Could you make a note of + [request] for our table? = 能为我们这桌备注 [要求] 吗？'],
+    [/discount has been applied/i, 'Could you check that + [discount] has been applied to the bill? = 能确认账单已使用 [折扣] 吗？'],
     [/15-minute wait/i, "There's a + [time] wait. Is that okay? = 需要等 [时间]，可以吗？"],
     [/Inside or outside/i, '[Option A] or [option B]? = A 还是 B？'],
     [/By the window/i, 'By the + [place] if possible. = 如果可以的话，靠 [位置]。'],
@@ -466,8 +534,16 @@ function getPattern(text: string) {
     [/spicy/i, 'Is this dish + [adjective]? = 这道菜 [口味/口感] 吗？'],
     [/salty/i, 'Is it very + [adjective]? = 它会很 [咸/甜/酸/辣] 吗？'],
     [/less oily/i, 'Can you make it less + [adjective]? = 可以做得少一点 [油/甜/咸] 吗？'],
+    [/Lighter seasoning/i, 'Lighter + [seasoning/sauce], please. = 请把 [调味/酱汁] 做清淡一点。'],
+    [/go easy on the seasoning/i, 'Could you ask the kitchen to go easy on + [ingredient/seasoning]? = 能请厨房少放 [配料/调味料] 吗？'],
     [/a bit softer/i, 'For the + [dish], can you make it a bit + [texture]? = [菜品] 能做得更 [口感] 一点吗？'],
+    [/too raw in the center/i, "Could we have it + [doneness]? We don't want it too + [texture]. = 可以做成 [熟度] 吗？我们不想太 [口感]。"],
     [/medium-rare/i, "I'd like it + [doneness], please. = 我要 [熟度]。"],
+    [/sold by weight/i, 'Is + [dish] sold by weight? = [菜品] 是按重量出售的吗？'],
+    [/minimum weight/i, 'What is the minimum + [weight/order]? = 最低 [重量/起订量] 是多少？'],
+    [/How many people is that enough for/i, 'How many people is + [portion] enough for? = [份量] 够几个人吃？'],
+    [/normally cook it/i, 'How do you normally cook + [dish]? = 你们通常怎样烹饪 [菜品]？'],
+    [/exact weight before cooking/i, 'Could you show us + [item] and tell us the exact + [measurement]? = 能给我们看 [物品] 并告知准确 [数据] 吗？'],
     [/less sweet/i, 'Can you make it less + [flavor]? = 可以少一点 [甜/酸/辣] 吗？'],
     [/How sweet/i, 'How + [adjective] do you want it? = 你想要多 [甜/辣/酸]？'],
     [/Just a little sugar/i, 'Just a little + [ingredient], please. = 只放一点点 [配料]。'],
